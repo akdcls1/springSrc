@@ -1,9 +1,15 @@
-package com.example.oBootJpa01.repository;
+package com.example.oBootJpa01.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.oBootJpa01.domain.Member;
+import com.example.oBootJpa01.repository.MemberRepository;
 
+//@Service
+//JPA ㅅ용시
+@Transactional
 public class MemberService {
 	
 	private final MemberRepository memberRepository;

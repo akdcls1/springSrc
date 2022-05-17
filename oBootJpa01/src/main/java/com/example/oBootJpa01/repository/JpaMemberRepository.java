@@ -2,8 +2,11 @@ package com.example.oBootJpa01.repository;
 
 import javax.persistence.EntityManager;
 
+import org.springframework.stereotype.Repository;
+
 import com.example.oBootJpa01.domain.Member;
 
+//@Repository
 public class JpaMemberRepository implements MemberRepository {
 	
 	private final EntityManager em;

@@ -1,0 +1,25 @@
+DataUtils를 사용함으로써 dataSource를 통한 DB 연결을 사용할 수 있게한다? 
+
+close하는 메서드 하나 추가해주는데 여기서 releaseConnection 쓰면 저렇게 주어진 연결을 닫아주는걸 스프링 프레임웍에서 지원해준다. 원래 하던대로 close해줘도 되고 이렇게 close해줘도 된다.
+
+SpringConfig추가 -> 환경 작업
+안에 DataSource관련된 코드 작성
+
+DB에 member 테이블을 생성하고
+member_seq 시퀀스를 만들어준다.
+
+config에서 빈으로 설정해서 사용할수도있대요
+
+
+JPA 코딩 시작
+javax Persistance
+
+JPA 쓰는 이유가 엔티티를 사용하기위해서.
+엔티티는 뭐지?
+DB테이블과 매칭되는 개념
+엔티티를 왜쓰지?
+
+properties에서 hibernate.ddl-auto를 create로 쓰면 테이블에 들어있는 내용을 싹 다 날리고 테이블만 다시 생성한다.
+Dto에서 @Id를 사용함으로써 PK를 생성한다.
+
+Bean으로 설정함으로써 하나의 Component로 tomcat에 들어가있는다라는 것

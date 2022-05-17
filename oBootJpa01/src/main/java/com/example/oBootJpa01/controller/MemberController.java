@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.oBootJpa01.domain.Member;
-import com.example.oBootJpa01.repository.MemberService;
+import com.example.oBootJpa01.service.MemberService;
 
 @Controller
 public class MemberController {
