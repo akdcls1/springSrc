@@ -1,0 +1,35 @@
+어노테이션? 
+개념
+사전적으로는 주석이란 의미가 담겨있다만 특수한 의미를 부여해주는 것이 어노테이션이다.
+프로그램 코드가 있으면 그 코드에 정보를 추가하는 방법
+
+
+종류
+@Configuration 	-> 환경 설정을 명시
+@Controller 	-> 컨트롤러 임을 명시
+@RequestMapping	-> 특정 URI에 매칭되는 클래스나 메소드를 명시
+@GetMapping	-> Get방식으로 클래스 매핑
+@PostMapping	-> Post방식으로 클래스 매핑
+@RequestParam	-> 요청된 파라미터 값을 찾아낼때 사용
+@Service		-> 서비스 객체임을 명시
+@Repository	-> Dao 객체임을 명시
+@Autowired	-> 속성(field), setter method, constructor(생성자)에서 사용, Type에 따라 알아서 Bean을 주입
+		    Controller 클래스에서 DAO나 Service에 관한 객체들을 주입 시킬 때 많이 사용
+
+Bean을 주입받는 방식 (3가지)
+@Autowired
+setter
+생성자
+
+DataSource가 뭔가? -> 커넥션 풀의 Connection을 관리하기 위한 객체
+그럼 커넥션 풀이 뭐지? -> Connection 객체를 프로그램이 실행될 때마다 생성하는 것이 아니라, 웹 애플리케이션이 서비스되기 전에 웹서버에서 미리 생성하여 준비한 다음, 필요할 때 준비된 Connection을 가져다 사용함으로써 JDBC 프로그래밍의 문제점들을 개선한 기술 
+-> 즉 Connection 객체를 미리 생성해서 준비해둔 다음 필요할때 그걸 갖다 쓰는 기술
+
+왜 이렇게 쓰는가?
+그냥 Connection 객체를 선언해서 사용하기엔 성능과 안전성이 많이 영향을 미치기때문에 좀 더 효율적이고 불필요한 자원 낭비를 없애기 위해서 DataSource라는 객체를 사용.
+
+
+Redirect를 쓰는 이유
+사이트 이동에 대해 브라우저에게 이동하라 명령하면 브라우저가 응답을 받고 다시 요청을 보낼때 새로운 URL을 포함
+그냥 사이트 이동할 때 씀.
+기존 페이지 주소가 새롭게 변경되거나, 불필요하거나 잘못된 주소를 하나로 이동시킬때 사용
