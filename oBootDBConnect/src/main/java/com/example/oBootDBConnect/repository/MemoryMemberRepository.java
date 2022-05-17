@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.example.oBootDBConnect.dto.Member1;
 
-
+//@Repository
 public class MemoryMemberRepository implements MemberRepository {
 	private static Map<Long, Member1> store = new HashMap<>();
 	private static long sequence = 0L;

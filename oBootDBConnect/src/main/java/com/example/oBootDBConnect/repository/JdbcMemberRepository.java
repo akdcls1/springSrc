@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.example.oBootDBConnect.dto.Member1;
 
-@Repository
+//@Repository
 public class JdbcMemberRepository implements MemberRepository {
 	
 	private final DataSource dataSource;
