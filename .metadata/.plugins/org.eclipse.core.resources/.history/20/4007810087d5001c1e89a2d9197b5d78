@@ -1,0 +1,57 @@
+package com.example.oBootDBConnect.repository;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import org.springframework.jdbc.datasource.DataSourceUtils;
+
+import com.example.oBootDBConnect.dto.Member1;
+
+public class JdbcMemberRepository implements MemberRepository {
+	
+	private final DataSource dataSource;
+	
+	public JdbcMemberRepository(DataSource dataSource) {
+		this.dataSource = dataSource;
+	}
+
+	private Connection getConnection() {
+		return DataSourceUtils.getConnection(dataSource);
+	}
+	
+	@Override
+	public Member1 save(Member1 member1) {
+		String sql = "insert into member(id,name) values (member_seq.nextval,?)";
+		System.out.println("JdbcMemberRepository sql->"+sql);
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, member1.getName());
+			pstmt.executeUpdate();
+			System.out.println("JdbcMemberRepository pstmt.executeUpdate After");
+			return member1;
+		} catch (Exception e) {
+			throw new IllegalStateException(e);
+		} finally {
+			try {
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();
+			} catch (SQLException e2) {
+				e2.printStackTrace();
+			}
+		}
+	}
+
+	@Override
+	public List<Member1> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
