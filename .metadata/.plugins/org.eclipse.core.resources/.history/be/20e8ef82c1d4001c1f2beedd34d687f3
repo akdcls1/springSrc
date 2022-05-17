@@ -1,0 +1,19 @@
+package com.example.BootHello.repository;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.example.BootHello.dto.Member1;
+
+public class MemoryMemberRepository implements MemberRepository {
+	private static Map<Long, Member1> store = new HashMap<>();
+	private static long sequence = 0;
+	@Override
+	public Member1 save(Member1 member1) {
+		member1.setId(++sequence);
+		store.put(member1.getId(), member1);
+		
+		return null;
+	}
+
+}

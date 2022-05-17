@@ -1,0 +1,17 @@
+package com.oracle.mvc151;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class StudentController {
+	private static final Logger logger = LoggerFactory.getLogger(StudentController.class);
+	
+	@RequestMapping("/studentForm")
+	public String studentForm() {
+		logger.info("studentForm start...");
+		return "createPage";
+	}
+}

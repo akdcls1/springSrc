@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;och07_MVC03/src/main/webapp/WEB-INF/views/board/comfirmId.jsp&apos; to &apos;confirmId.jsp&apos;" description="Rename resource &apos;comfirmId.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/WEB-INF/views/board/comfirmId.jsp" name="confirmId.jsp" stamp="1652144977895" updateReferences="true"/>
+</session>

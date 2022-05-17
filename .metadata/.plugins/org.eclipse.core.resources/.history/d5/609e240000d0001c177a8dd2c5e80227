@@ -1,0 +1,5 @@
+package com.oracle.mvc03.dto;
+
+public class Member {
+
+}

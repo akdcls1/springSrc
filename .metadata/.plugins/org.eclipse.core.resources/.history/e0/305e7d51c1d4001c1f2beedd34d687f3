@@ -1,0 +1,13 @@
+package com.example.BootHello.repository;
+
+import com.example.BootHello.dto.Member1;
+
+public class MemoryMemberRepository implements MemberRepository {
+
+	@Override
+	public Member1 save(Member1 member1) {
+		
+		return null;
+	}
+
+}
