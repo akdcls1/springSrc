@@ -1,9 +1,12 @@
 package com.example.oBootJpa01.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -33,5 +36,24 @@ public class MemberController {
 		System.out.println("member.getName()->"+member.getName());
 		memberService.join(member);
 		return "redirect:/";
+	}
+	
+	@GetMapping(value="/members")
+	public String listMember(Model model) {
+		List<Member> memberList = memberService.getListAllMember();
+		logger.info("memberList.size->{}",memberList.size());
+		model.addAttribute("members", memberList);
+		
+		return "members/memberList";
+	}
+	
+	@PostMapping(value="/members/search")
+	public String search(Member member, Model model) {
+		System.out.println("/members/search member.getName()->"+member.getName());
+		List<Member> memberList = memberService.getListSearchMember(member.getName());
+		System.out.println("/members/search memberList.size()->"+memberList.size());
+		model.addAttribute("members", memberList);
+		
+		return "members/memberList";
 	}
 }

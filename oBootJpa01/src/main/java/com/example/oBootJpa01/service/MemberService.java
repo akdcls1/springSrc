@@ -1,5 +1,7 @@
 package com.example.oBootJpa01.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,6 +26,21 @@ public class MemberService {
 		System.out.println("MemberService join member.getId()->"+member.getId());
 		memberRepository.save(member);
 		return member.getId();
+	}
+
+	// 전체 회원 조회
+	public List<Member> getListAllMember() {
+		List<Member> listMember = memberRepository.findAll();
+		System.out.println("MemberService getListAllMember listMember.size() -> "+listMember.size());
+		return listMember;
+	}
+
+	public List<Member> getListSearchMember(String searchName) {
+		System.out.println("MemberService getListSearchMember Start...");
+		System.out.println("MemberService getListSearchMember searchName->"+searchName);
+		List<Member> listMember = memberRepository.findByNames(searchName);
+		System.out.println("MemberService getListSearchMember listMember.size()->"+listMember.size());
+		return listMember;
 	}
 	
 }

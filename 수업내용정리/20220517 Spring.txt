@@ -23,3 +23,14 @@ properties에서 hibernate.ddl-auto를 create로 쓰면 테이블에 들어있�
 Dto에서 @Id를 사용함으로써 PK를 생성한다.
 
 Bean으로 설정함으로써 하나의 Component로 tomcat에 들어가있는다라는 것
+
+MemberController.java -> listMember() 메서드 작성
+MemberService.java -> getListAllMember() 메서드 작성
+JpaMemberRepository.java -> findAll() 메서드 작성
+쿼리문 작성 시에는 엔티티.createQuery로 쿼리문을 작성하고 안에 들어가야 할 값은 m의 member 테이블을 적고, 해당하는 클래스는 Member.class로 작성했다.
+sql문 작성시에 from에 해당하는거는 Dto로 적어줘야함
+이전 sql문처럼 다 대문자로 간다고 생각하면 틀림.
+그리고 createQuery를 작성할때 .getResultList()로 검색된 쿼리문을 앞에 선언된 List형태 때문에 getResultList()로 리스트형태로 만들어준다.
+
+List까지 제대로 저장되는거 확인
+
