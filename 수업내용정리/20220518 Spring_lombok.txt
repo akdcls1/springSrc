@@ -16,3 +16,6 @@ domain에 @Entity로 엔티티를 설정한 다음 거기에 lombok이 지원하
 @Column : 컬럼에 대한 속성 지정가능
 - name : 컬럼 이름을 지정
 - length : 크기 지정
+
+오후수업 -
+@Transactional 로 걸려있으면 기본이 커밋이다.

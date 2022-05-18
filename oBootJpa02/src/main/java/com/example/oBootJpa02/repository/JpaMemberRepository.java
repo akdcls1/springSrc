@@ -1,5 +1,7 @@
 package com.example.oBootJpa02.repository;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 
 import org.springframework.stereotype.Repository;
@@ -21,11 +23,46 @@ public class JpaMemberRepository implements MemberRepository {
 		// 팀 저장
 		Team team = new Team();
 		team.setName(member.getTeamname());
+		System.out.println("team.setName After...");
 		em.persist(team);
+		System.out.println("em.persist(team) After...");
 		// 회원 저장
 		member.setTeam(team);		// 단방향 연관관계 설정, 참조 저장
+		System.out.println("member.setTeam(team) After...");
 		em.persist(member);
+		System.out.println("em.persist(member) After...");
 		return member;
+	}
+
+	@Override
+	public List<Member> findAll() {
+		System.out.println("JpaMemberRepository findAll Before...");
+		List<Member> memberList = em.createQuery("select m from Member m", Member.class).getResultList();
+		System.out.println("JpaMemberRepository findAll After...");
+		return memberList;
+	}
+
+	@Override
+	public Member findByMember(Long memberId) {
+		//						Entity			PK
+		Member member = em.find(Member.class, memberId);
+		return member;
+	}
+
+	// 연관관계 고려 Update
+	@Override
+	public int updateByMember(Member member) {
+		int result = 0;
+		System.out.println("JpaMemberRepository updateByMember member.getId()->"+member.getId());
+		Member member3 = em.find(Member.class, member.getId());
+		// Exist --> Update
+		if(member3 != null) {
+			
+		}else {
+			result = 0;
+			System.out.println("JpaMemberRepository updateByMember No Exist...");
+		}
+		return result;
 	}
 
 }
