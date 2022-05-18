@@ -1,0 +1,18 @@
+오전시간 -
+lombok 설치하고
+domain에 @Entity로 엔티티를 설정한 다음 거기에 lombok이 지원하는 @Getter와 @Setter를 설정해서 게터세터를 지정해줌.
+@JoinColumn(name = "team_id")를 사용함으로써 연관관계를 맺음.
+@ManyToOne을 지정함으로써 여러 Member가 하나의 팀을 지정한다.
+@Transient 임시 버퍼용도로 쓸수있고 실제 컬럼테이블에 만들어지지는 않음.
+@Table로 테이블 이름 지정.
+@SequenceGenerator로 시퀀스 생성.
+- name : 객체이름
+- sequenceName : DB에 저장될 시퀀스 이름
+- initiaulValue : 시퀀스 시작할 숫자
+- allocationSize : 시퀀스가 더해질 숫자
+@GeneratedValue : 컬럼에 시퀀스 지정해주기
+- strategy : 타입지정
+- generator : 어떤걸로 지정할지 객체이름 적어주기.
+@Column : 컬럼에 대한 속성 지정가능
+- name : 컬럼 이름을 지정
+- length : 크기 지정
