@@ -18,10 +18,10 @@ import lombok.Setter;
 @Getter
 @Setter
 @SequenceGenerator(name = "member_seq_gen",					// 객체이름
-				   sequenceName = "member_seq_generator",	// 매핑할 DB 시퀀스 이름
+				   sequenceName = "member_seq_generator3",	// 매핑할 DB 시퀀스 이름
 				   initialValue = 1,						// 시퀀스 시작 번호
 				   allocationSize = 1)						// 증가치 번호
-@Table(name = "member1")
+@Table(name = "member3")
 public class Member {
 	@Id
 	@GeneratedValue(
@@ -33,6 +33,8 @@ public class Member {
 	
 	@Column(name = "user_name", length = 50)
 	private String name;
+	
+	private Long sal;
 	
 	// FK	--> 다 대 1 원칙	여러명이 하나의 팀을 지정하고있다
 	@ManyToOne
