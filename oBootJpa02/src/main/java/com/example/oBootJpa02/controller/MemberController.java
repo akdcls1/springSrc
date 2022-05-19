@@ -68,7 +68,7 @@ public class MemberController {
 		return "members/memberModify";
 	}
 	
-	@GetMapping(value="/members/memberUpdate")
+	@PostMapping(value="/members/memberUpdate")
 	public String memberUpdate(Member member, Model model) {
 		System.out.println("MemberController memberUpdate id->"+member.getId());
 		System.out.println("MemberController memberUpdate member.getName->"+member.getName());

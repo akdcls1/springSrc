@@ -57,7 +57,21 @@ public class JpaMemberRepository implements MemberRepository {
 		Member member3 = em.find(Member.class, member.getId());
 		// Exist --> Update
 		if(member3 != null) {
-			
+			System.out.println("JpaMemberRepository updateByMember member.getTeamid()->"+member.getTeamid());
+			// Team Exist --> Update
+			Team team = em.find(Team.class, member.getTeamid());
+			if(team != null) {
+				System.out.println("JpaMemberRepository updataeByMember member.getTeamname()->"+member.getTeamname());
+				team.setName(member.getTeamname());
+				em.persist(team);
+			}
+			// 회원 저장
+			System.out.println("JpaMemberRepository updateByMember member.getName()->"+member.getName());
+			member3.setTeam(team);				// 단방향 연관관계 설정, 참조저장
+			member3.setName(member.getName());	// 단방향 연관관계 설정, 참조저장
+			em.persist(member3);
+			System.out.println("JpaMemberRepository updateByMember persist 이후 member.getName()->"+member.getName());
+			result = 1;
 		}else {
 			result = 0;
 			System.out.println("JpaMemberRepository updateByMember No Exist...");

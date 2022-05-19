@@ -1,0 +1,24 @@
+오전수업 -
+즉시로딩 : 어떤걸 조회하는 시점에서 즉시로딩을 걸어두면 다른 테이블까지 바로 불러오는 쿼리를 날리는게 즉시로딩
+- 여기선 Member를 조회하는 시점에서 Team까지 불러오는 쿼리를 날리는 것이 즉시로딩.
+
+지연로딩 : 어떤걸 조회하는 시점에서 사용하는 시점에 해당하는 테이블만 조회하는 쿼리가 나감
+- 여기선 Member를 조회하는 시점에서 Team을 불러오는 쿼리가 안날라가고 Member를 불러오는 쿼리만 나감. Team을 부르는 경우에만 Team을 부르는 쿼리가 나감.
+
+JPA는 Object와 Relation을 어떻게 Mapping 시키냐가 관건이다.
+JDBC는 SQL관점이고 ORM은 객체관점이다.
+ORM -> Mapping Framework
+
+Postman 설치(Rest API 사용할때 주로 사용)
+
+@SpringBootTest : 스프링 부트 넣고 테스트(이게 없으면 @Autowired 다 실패)
+
+테스트
+문제점이 발생햇을때 다시 되돌린다 -> 회복테스트
+구조적으로 문제가 없는가 -> 구조테스트
+
+src/test/java에서 테스트 파일을 만든 다음 JUnit으로 실행시켰다.
+이게 테스트 하는 방법.
+
+@ResponeBody : 끝나면 몸체로 돌려준다. Ajax가 된다는 것.
+@RequiredArgsConstructor : 이 어노테이션을 사용함으로써 생성자를 만들어줄 필용가 없음.

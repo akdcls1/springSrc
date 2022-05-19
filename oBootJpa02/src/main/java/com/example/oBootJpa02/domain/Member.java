@@ -28,7 +28,7 @@ public class Member {
 					strategy = GenerationType.SEQUENCE,
 					generator = "member_seq_gen"
 					)
-	@Column(name = "member_id")
+	@Column(name = "member_id", length = 4)
 	private Long id;
 	
 	@Column(name = "user_name", length = 50)
