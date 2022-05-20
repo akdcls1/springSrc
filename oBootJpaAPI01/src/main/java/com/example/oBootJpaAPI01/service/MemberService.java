@@ -30,4 +30,22 @@ public class MemberService {
 		System.out.println("MemberService getListAllMember listMember.size()->"+listMember.size());
 		return listMember;
 	}
+
+	public void update(Long id, String name, Long sal) {
+		Member member = new Member();
+		member.setId(id);
+		member.setName(name);
+		member.setSal(sal);
+		System.out.println("MemberService memberUpdate member.getName()->"+member.getName());
+		System.out.println("MemberService memberUpdate member.getSal()->"+member.getSal());
+		memberRepository.updateByMember(member);
+		return;
+	}
+
+	public Member findByMember(Long memberId) {
+		Member member = memberRepository.findByMbmer(memberId);
+		System.out.println("MemberService findByMember member.get().getId()->"+member.getId());
+		System.out.println("MemberService findByMember member.get().getName()->"+member.getName());
+		return member;
+	}
 }

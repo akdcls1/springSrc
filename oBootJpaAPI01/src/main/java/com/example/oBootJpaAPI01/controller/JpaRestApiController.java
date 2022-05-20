@@ -7,7 +7,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +20,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
-// Controller + ResponseBody
+// Controller + ResponseBody(*****)
 // 1. API
 // 2. Ajax
 @RestController
@@ -84,14 +86,18 @@ public class JpaRestApiController {
 		
 		//  자바 8에서 추가한 스트림(Streams)은 람다를 활용할 수 있는 기술 중 하나
 		List<MemberRtnDto> memberCollect = findMembers.stream()
-													  .map(m -> new MemberRtnDto(m.getName()))
+													  .map(m -> new MemberRtnDto(m.getName(), m.getSal()))
 													  .collect(Collectors.toList());
-		return new Result(memberCollect);
+		return new Result(memberCollect.size(),  memberCollect);
 	}
 	
+	// 1. Entity보안
+	// 2. 유연성 --> Entity가 API에 의존적 X, 원하는 Data 생성 , 전달
+	// T는 인스턴스를 생성할 때 구체적인 타입으로 변경
 	@Data
 	@AllArgsConstructor
 	class Result<T>{
+		private int totCount;
 		private T data;
 	}
 	
@@ -99,5 +105,33 @@ public class JpaRestApiController {
 	@AllArgsConstructor
 	class MemberRtnDto{
 		private String name;
+		private Long sal;
+	}
+	
+	/*
+	 * 수정 API
+	 * PUT 방식을사용했는데, PUT은 전체 업데이트를 할 때 사용하는 것이 맞다.
+	 * URI 상에서 '{ }' 로 감싸여있는 부분과 동일한 변수명을 사용하는 방법
+	 */
+	@PutMapping("/api/v2/members/{id}")
+	public UpdateMemberResponse updateMemberV2(@PathVariable("id") Long id,
+											   @RequestBody @Valid UpdateMemberRequest uMember) {
+		memberService.update(id, uMember.getName(),uMember.getSal());
+		Member findMember = memberService.findByMember(id);
+		return new UpdateMemberResponse(findMember.getId(), findMember.getName(), findMember.getSal());
+	}
+	
+	@Data
+	static class UpdateMemberRequest{
+		private String 	name;
+		private Long 	sal;
+	}
+	
+	@Data
+	@AllArgsConstructor
+	class UpdateMemberResponse{
+		private Long	id;
+		private String	name;
+		private Long	sal;
 	}
 }
