@@ -1,4 +1,4 @@
-package com.example.oBootMybatis01;
+package com.oracle.oBootMybatis01;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
