@@ -10,6 +10,7 @@
 <body>
 	<h2>직원 목록</h2>
 	<a href="writeForm">입력</a>
+	<p>UptCnt 수정시 전달 MEssage : ${uptCnt }</p>
 	
 	<c:set var="num" value="${pg.total-pg.start+1 }"></c:set>
 	

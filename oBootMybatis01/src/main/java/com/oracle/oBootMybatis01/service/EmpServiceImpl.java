@@ -5,14 +5,19 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.oracle.oBootMybatis01.dao.DeptDao;
 import com.oracle.oBootMybatis01.dao.EmpDao;
+import com.oracle.oBootMybatis01.model.Dept;
 import com.oracle.oBootMybatis01.model.Emp;
 
 @Service
 public class EmpServiceImpl implements EmpService {
 	@Autowired
 	private	EmpDao	ed;
-
+	
+	@Autowired
+	private DeptDao dd;
+	
 	@Override
 	public int total() {
 		System.out.println("EmpServiceImpl STart total...");
@@ -36,6 +41,32 @@ public class EmpServiceImpl implements EmpService {
 		System.out.println("EmpServiceImpl detail Start...");
 		emp = ed.detail(empno);
 		return emp;
+	}
+
+	@Override
+	public int update(Emp emp) {
+		// Biz
+		System.out.println("EmpServiceImpl update...");
+		int kkk = 0;
+		kkk = ed.update(emp);
+		return kkk;
+	}
+
+	@Override
+	public List<Emp> listManager() {
+		List<Emp> empList = null;
+		System.out.println("EmpServiceImpl listManager Start...");
+		empList = ed.listManager();
+		return empList;
+	}
+
+	@Override
+	public List<Dept> deptSelect() {
+		List<Dept> deptList = null;
+		System.out.println("EmpServiceImpl deptSelect Start...");
+		deptList = dd.deptSelect();
+		System.out.println("EmpServiceImpl deptSelect deptList.size()->"+deptList.size());
+		return deptList;
 	}
 
 }

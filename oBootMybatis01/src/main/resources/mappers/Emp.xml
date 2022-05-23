@@ -20,4 +20,19 @@
 	<select id="tkEmpSelOne" parameterType="int" resultType="Emp">
 		SELECT * FROM EMP WHERE empno = #{empno}
 	</select>
+	
+	<update id="tkEmpUpdate" parameterType="Emp">
+		UPDATE EMP SET 	ename=#{ename}, 
+						job=#{job}, 
+						sal=#{sal}, 
+						hiredate=#{hiredate}, 
+						comm=#{comm}, 
+						mgr=#{mgr}, 
+						deptno=#{deptno}
+		WHERE empno=#{empno}
+	</update>
+	
+	<select id="tkSelectManager" resultType="Emp">
+		SELECT * FROM EMP WHERE empno in (select mgr from emp)
+	</select>
 </mapper>

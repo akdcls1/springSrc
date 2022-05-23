@@ -4,5 +4,6 @@
 <configuration>
 	<typeAliases>
 		<typeAlias alias="Emp" type="com.oracle.oBootMybatis01.model.Emp"/>
+		<typeAlias alias="Dept" type="com.oracle.oBootMybatis01.model.Dept"/>
 	</typeAliases>
 </configuration>

@@ -10,8 +10,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.oracle.oBootMybatis01.dao.EmpDao;
+import com.oracle.oBootMybatis01.model.Dept;
 import com.oracle.oBootMybatis01.model.Emp;
 import com.oracle.oBootMybatis01.service.EmpService;
 import com.oracle.oBootMybatis01.service.Paging;
@@ -73,7 +75,38 @@ public class EmpController {
 		System.out.println("es.update(emp) Count --> "+uptCnt);
 		model.addAttribute("uptCnt", uptCnt);
 		model.addAttribute("kk3", "Message Test");
-		return "redirect:list";
+//		return "redirect:list";
+		return "forward:list";
 	}
 
+	@RequestMapping(value="writeForm")
+	public String writeForm(Model model) {
+//		 Emp emp = null;
+		// 관리자 사번만 Get
+		List<Emp> empList = es.listManager();
+		// Service ---> List<Emp> listManager()
+		// Dao ->   List<Emp> listManager()
+		// mapper --> tkSelectManager  [emp 관리자만 Select   ]
+
+		System.out.println("EmpController writeForm empList.size()->"+empList.size());
+		model.addAttribute("empMngList", empList);	// emp Manager List
+		// 부서(코드, 부서명)
+		List<Dept> deptList = es.deptSelect();
+		model.addAttribute("deptList", deptList);	// dept
+		return "writeForm";
+	}
+	
+	@RequestMapping(value="write", method = RequestMethod.POST)
+	public String write(Emp emp, Model model) {
+		System.out.println("EmpController Start write...");
+//		System.out.println("emp.getHiredate->"+emp.getHiredate());
+//		Service, Dao, Mapper명[insertEmp]까지 -> insert
+		int result = es.insert(emp);
+		if(result >0) 
+			return "redirect:list";
+		else {
+			model.addAttribute("msg", "입력 실패 확인해 보세요");
+			return "forward:wrtieForm";
+		}
+	}
 }
