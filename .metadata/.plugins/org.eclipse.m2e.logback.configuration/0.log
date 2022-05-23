@@ -11017,3 +11017,96 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.mybatis.s
 2022-05-20 12:38:35,909 [Worker-64: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework:spring-jcl:5.3.20
 2022-05-20 12:38:35,912 [Worker-64: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework:spring-test:5.3.20
 2022-05-20 12:38:35,916 [Worker-64: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.xmlunit:xmlunit-core:2.9.0
+2022-05-20 15:45:07,590 [Worker-112: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-05-20 15:45:07,590 [Worker-112: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-05-20 15:45:07,615 [Worker-112: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-05-20 15:45:07,651 [Worker-112: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2022-05-20 15:45:07,668 [Worker-112: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-05-20 15:45:07,668 [Worker-112: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-05-20 15:45:07,669 [Worker-112: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\spring\springSrc\oBootMybatis01\src\test\resources
+2022-05-20 15:45:07,669 [Worker-112: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of oBootMybatis01
+2022-05-20 15:45:07,681 [Worker-112: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for oBootMybatis01
+2022-05-20 15:45:07,690 [Worker-112: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-05-20 15:45:07,690 [Worker-112: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-05-20 15:50:48,304 [Worker-120: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.oracle:oBootMybatis01:version1.0 @ E:\spring\springSrc\oBootMybatis01\pom.xml.
+2022-05-20 15:50:49,282 [Worker-120: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-jasper/9.0.63/tomcat-embed-jasper-9.0.63.pom
+2022-05-20 15:50:49,559 [Worker-120: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-jasper/9.0.63/tomcat-embed-jasper-9.0.63.pom
+2022-05-20 15:50:49,708 [Worker-120: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-annotations-api/9.0.63/tomcat-annotations-api-9.0.63.pom
+2022-05-20 15:50:49,863 [Worker-120: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-annotations-api/9.0.63/tomcat-annotations-api-9.0.63.pom
+2022-05-20 15:50:50,558 [AetherRepositoryConnector-repo.maven.apache.org-2-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-annotations-api/9.0.63/tomcat-annotations-api-9.0.63.jar
+2022-05-20 15:50:50,705 [AetherRepositoryConnector-repo.maven.apache.org-2-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-jasper/9.0.63/tomcat-embed-jasper-9.0.63.jar
+2022-05-20 15:50:50,852 [AetherRepositoryConnector-repo.maven.apache.org-2-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-annotations-api/9.0.63/tomcat-annotations-api-9.0.63.jar
+2022-05-20 15:50:51,550 [AetherRepositoryConnector-repo.maven.apache.org-2-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-jasper/9.0.63/tomcat-embed-jasper-9.0.63.jar
+2022-05-20 15:50:54,231 [Worker-120: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-05-20 15:50:54,232 [Worker-120: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-05-20 15:50:54,240 [Worker-120: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-05-20 15:50:54,342 [Worker-120: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2022-05-20 15:50:54,350 [Worker-120: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-05-20 15:50:54,350 [Worker-120: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-05-20 15:50:54,351 [Worker-120: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\spring\springSrc\oBootMybatis01\src\test\resources
+2022-05-20 15:50:54,351 [Worker-120: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of oBootMybatis01
+2022-05-20 15:50:54,351 [Worker-120: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for oBootMybatis01
+2022-05-20 15:50:54,355 [Worker-120: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-05-20 15:50:54,355 [Worker-120: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-05-20 15:50:56,244 [Worker-115: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-jasper/9.0.63/tomcat-embed-jasper-9.0.63-sources.jar
+2022-05-20 15:50:57,293 [Worker-115: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-jasper/9.0.63/tomcat-embed-jasper-9.0.63-sources.jar
+2022-05-20 15:50:57,418 [Worker-115: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.apache.tomcat.embed:tomcat-embed-jasper:9.0.63
+2022-05-20 15:50:58,085 [Worker-115: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-annotations-api/9.0.63/tomcat-annotations-api-9.0.63-sources.jar
+2022-05-20 15:50:58,427 [Worker-115: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-annotations-api/9.0.63/tomcat-annotations-api-9.0.63-sources.jar
+2022-05-20 15:50:58,842 [Worker-115: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.apache.tomcat:tomcat-annotations-api:9.0.63
+2022-05-20 15:50:58,846 [Worker-115: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.apache.tomcat.embed:tomcat-embed-jasper:9.0.63
+2022-05-20 15:50:58,854 [Worker-115: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.apache.tomcat:tomcat-annotations-api:9.0.63
+2022-05-20 15:50:58,870 [Worker-115: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.apache.tomcat.embed:tomcat-embed-jasper:9.0.63
+2022-05-20 15:50:58,874 [Worker-115: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.apache.tomcat:tomcat-annotations-api:9.0.63
+2022-05-20 15:50:58,893 [Worker-115: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.apache.tomcat.embed:tomcat-embed-jasper:9.0.63
+2022-05-20 15:50:58,901 [Worker-115: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.apache.tomcat:tomcat-annotations-api:9.0.63
+2022-05-20 15:52:41,552 [Worker-117: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-05-20 15:52:41,552 [Worker-117: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-05-20 15:52:41,553 [Worker-117: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-05-20 15:52:41,568 [Worker-117: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2022-05-20 15:52:41,583 [Worker-117: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-05-20 15:52:41,584 [Worker-117: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-05-20 15:52:41,584 [Worker-117: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\spring\springSrc\oBootMybatis01\src\test\resources
+2022-05-20 15:53:47,950 [Worker-117: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-05-20 15:53:47,950 [Worker-117: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-05-20 15:53:47,950 [Worker-117: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-05-20 15:53:47,950 [Worker-117: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-05-20 15:53:47,953 [Worker-117: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-05-20 15:53:47,953 [Worker-117: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-05-20 15:53:47,953 [Worker-117: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\spring\springSrc\oBootMybatis01\src\test\resources
+2022-05-23 09:16:02,772 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2022-05-23 11:06:04,231 [Worker-48: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-05-23 11:06:04,236 [Worker-48: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-05-23 11:06:04,244 [Worker-48: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-05-23 11:06:04,369 [Worker-48: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 9 resources
+2022-05-23 11:06:04,461 [Worker-48: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-05-23 11:06:04,462 [Worker-48: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-05-23 11:06:04,462 [Worker-48: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\spring\springSrc\oBootMybatis01\src\test\resources
+2022-05-23 11:10:23,239 [Worker-50: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-05-23 11:10:23,239 [Worker-50: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-05-23 11:10:23,251 [Worker-50: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-05-23 11:10:23,289 [Worker-50: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 9 resources
+2022-05-23 11:10:23,301 [Worker-50: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-05-23 11:10:23,301 [Worker-50: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-05-23 11:10:23,301 [Worker-50: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\spring\springSrc\oBootMybatis01\src\test\resources
+2022-05-23 11:14:21,303 [Worker-48: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-05-23 11:14:21,304 [Worker-48: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-05-23 11:14:21,305 [Worker-48: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-05-23 11:14:21,305 [Worker-48: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-05-23 11:14:21,310 [Worker-48: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-05-23 11:14:21,310 [Worker-48: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-05-23 11:14:21,310 [Worker-48: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\spring\springSrc\oBootMybatis01\src\test\resources
+2022-05-23 12:12:42,548 [Worker-78: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-05-23 12:12:42,549 [Worker-78: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-05-23 12:12:42,552 [Worker-78: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-05-23 12:12:42,641 [Worker-78: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 9 resources
+2022-05-23 12:12:42,675 [Worker-78: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-05-23 12:12:42,675 [Worker-78: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-05-23 12:12:42,675 [Worker-78: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\spring\springSrc\oBootMybatis01\src\test\resources
+2022-05-23 12:37:01,624 [Worker-87: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-05-23 12:37:01,625 [Worker-87: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-05-23 12:37:01,627 [Worker-87: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-05-23 12:37:01,670 [Worker-87: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 9 resources
+2022-05-23 12:37:01,675 [Worker-87: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-05-23 12:37:01,675 [Worker-87: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-05-23 12:37:01,675 [Worker-87: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\spring\springSrc\oBootMybatis01\src\test\resources

@@ -1,0 +1,7 @@
+오전수업 -
+여러줄을 뽑아 올때는 selectList
+하나만 갖고 올때는 selectOne
+
+Emp.xml 에 #{변수명} 적는 이유는 Mybatis 문법
+
+parameterType 은 입력해야할 값이 하나면 int, String같이 타입하나를 지정하면 됨.
