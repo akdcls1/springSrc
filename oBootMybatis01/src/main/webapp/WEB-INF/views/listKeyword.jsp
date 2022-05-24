@@ -10,7 +10,7 @@
 <body>
 	<h2>직원 목록</h2>
 	<a href="writeForm">입력</a>
-	<p>UptCnt 수정시 전달 MEssage : ${uptCnt }</p>
+	<p>UptCnt 수정시 전달 Message : ${uptCnt }</p>
 	
 	<form action="listKeyword">
 		<input type="hidden" name="currentPage" value="${pg.currentPage }">
@@ -36,13 +36,13 @@
 		</c:forEach>
 	</table>
 	<c:if test="${pg.startPage > pg.pageBlock }">
-		<a href="list?currentPage=${pg.startPage-pg.pageBlock }">[이전]</a>
+		<a href="listKeyword?currentPage=${pg.startPage-pg.pageBlock }&search=s_all&keyword=${keyword}">[이전]</a>
 	</c:if>
 	<c:forEach var="i" begin="${pg.startPage }" end="${pg.endPage }">
-		<a href="list?currentPage=${i }">[${i }]</a>
+		<a href="listKeyword?currentPage=${i}&search=s_all<%-- &keyword=${keyword} --%>">[${i }]</a>
 	</c:forEach>
 	<c:if test="${pg.endPage < pg.totalPage }">
-		<a href="list?currentPage=${pg.startPage+pg.pageBlock }">[다음]</a>
+		<a href="listKeyword?currentPage=${pg.startPage+pg.pageBlock }&search=s_all&keyword=${keyword}">[다음]</a>
 	</c:if>
 </body>
 </html>

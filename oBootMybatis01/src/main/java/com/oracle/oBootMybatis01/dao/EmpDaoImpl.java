@@ -121,7 +121,9 @@ public class EmpDaoImpl implements EmpDao {
 		System.out.println("EmpDaoImpl listEmpKeyword Start...");
 		System.out.println("EmpDaoImpl listEmpKeyword emp.getEname->"+emp.getEname());
 		System.out.println("EmpDaoImpl listEmpKeyword emp.getKeyword->"+emp.getKeyword());
+		if(emp.getKeyword() == null) emp.setKeyword("%");
 		try {
+			//	keyword 검색
 			//	Naming Rule					Map 	ID				parameter
 			listEmpKeyword = session.selectList("tkEmpListKeyword", emp);
 			System.out.println("EmpDaoImpl listEmpKeyword.size()->"+listEmpKeyword.size());
@@ -129,6 +131,20 @@ public class EmpDaoImpl implements EmpDao {
 			System.out.println("EmpDaoImpl listEmpKeyword Exception->"+e.getMessage());
 		}
 		return listEmpKeyword;
+	}
+
+	@Override
+	public int totalKeyword(Emp emp) {
+		int tot = 0;
+		System.out.println("EmpDaoImpl totalKeyword Start...");
+		try {
+			//	Naming Rule		Map 	ID				parameter
+			tot = session.selectOne("tkEmpTotalKeyword", emp);
+			System.out.println("EmpDaoImpl listEmpKeyword.size()->"+tot);
+		} catch (Exception e) {
+			System.out.println("EmpDaoImpl listEmpKeyword Exception->"+e.getMessage());
+		}
+		return tot;
 	}
 
 }

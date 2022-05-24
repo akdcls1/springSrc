@@ -41,27 +41,34 @@ public class EmpController {
 		model.addAttribute("pg", pg);
 		model.addAttribute("total", total);
 		
-		return "list";
+		return "test01/test01";
 	}
 	
 	// keyword(조건) 조회
 	@RequestMapping(value="listKeyword")
-	public String list3(Emp emp, String currentPage, Model model) {
-		logger.info("EmpController Start list3 keyword(조건) 조회...");
+	public String listKeyword(Emp emp, String currentPage, Model model) {
+		logger.info("EmpController Start listKeyword keyword(조건) 조회...");
 		
-		int total = es.total();	// Emp Count -> 19
+		// Keyword 맞는 Count 도출
+		int total = es.totalKeyword(emp);	// Emp Count -> 19
 
 		System.out.println("EmpController total->"+total);
 		Paging pg = new Paging(total, currentPage);
 		emp.setStart(pg.getStart());	// 시작시 1
 		emp.setEnd(pg.getEnd());		// 시작시 10
+		System.out.println("EmpController pg.getTotal->"+pg.getTotal());
+		System.out.println("EmpController pg.getStart()->"+pg.getStart());
+		System.out.println("EmpController pg.getEnd()->"+pg.getEnd());
 		List<Emp> listEmpKeyword = es.listEmpKeyword(emp);
 		System.out.println("EmpController list listEmp.size()=>"+listEmpKeyword.size());
 		model.addAttribute("listEmp", listEmpKeyword);
 		model.addAttribute("pg", pg);
 		model.addAttribute("total", total);
-		
-		return "list";
+		model.addAttribute("keyword", emp.getKeyword());
+		if(emp.getKeyword() == null)
+			return "list";
+		else
+			return "listKeyword";
 	}
 	
 	@GetMapping(value="detail")

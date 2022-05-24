@@ -94,4 +94,12 @@ public class EmpServiceImpl implements EmpService {
 		return listEmpKeyword;
 	}
 
+	@Override
+	public int totalKeyword(Emp emp) {
+		System.out.println("EmpServiceImpl totalKeyword Start...");
+		int totCnt = ed.totalKeyword(emp);
+		System.out.println("EmpServiceImpl totalKeyword totCnt->"+totCnt);
+		return totCnt;
+	}
+
 }
