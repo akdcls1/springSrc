@@ -17,6 +17,18 @@
 		WHERE rn between #{start} AND #{end}
 	</select>
 	
+	<select id="tkEmpListAll" parameterType="Emp" resultType="Emp">
+		<![CDATA[
+			SELECT * 
+			FROM (
+				SELECT rownum rn, a.*
+				FROM (SELECT * FROM emp ORDER BY empno) a
+				)
+			WHERE rn >= #{start} AND
+				  rn <= #{end}
+		]]>
+	</select>
+	
 	<select id="tkEmpSelOne" parameterType="int" resultType="Emp">
 		SELECT * FROM EMP WHERE empno = #{empno}
 	</select>
@@ -34,5 +46,41 @@
 	
 	<select id="tkSelectManager" resultType="Emp">
 		SELECT * FROM EMP WHERE empno in (select mgr from emp)
+	</select>
+	
+	<insert id="insertEmp" parameterType="Emp">
+		INSERT INTO EMP
+		VALUES(#{empno}, #{ename}, #{job}, #{mgr}, #{hiredate}, #{sal}, #{comm}, #{deptno})
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		DELETE
+		FROM EMP
+		WHERE empno = #{empno}
+	</delete>
+	
+	<select id="tkEmpListKeyword" parameterType="Emp" resultType="Emp">
+		SELECT * 
+		FROM (
+			SELECT rownum rn, a.*
+			FROM (SELECT * FROM emp ORDER BY empno) a
+			)
+		WHERE rn between #{start} AND #{end}
+		<choose>
+			<when test="search == 's_all'">
+				AND ( 	ename like '%' || #{keyword} || '%'
+					OR	job like '%' || #{keyword} || '%'
+					)
+			</when>
+			<when test="search == 's_job'">
+				AND job like '%' || #{keyword} || '%'
+			</when>
+			<when test="search == 's_ename'">
+				AND ename like '%' || #{keyword} || '%'
+			</when>
+			<otherwise>
+				AND job like '%'
+			</otherwise>
+		</choose>
 	</select>
 </mapper>

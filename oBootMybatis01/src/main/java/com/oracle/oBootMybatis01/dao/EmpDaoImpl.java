@@ -36,7 +36,8 @@ public class EmpDaoImpl implements EmpDao {
 		System.out.println("EmpDaoImpl listEmp Start...");
 		try {
 			//	Naming Rule					Map ID		parameter
-			empList = session.selectList("tkEmpListAll3", emp);
+//			empList = session.selectList("tkEmpListAll3", emp);
+			empList = session.selectList("tkEmpListAll", emp);
 			System.out.println("EmpDaoImpl listEmp empList.size()->"+empList.size());
 			for(Emp rtnEmp : empList) {
 				System.out.println("EmpDaoImpl listEmp rtnEmp.getEname()->"+rtnEmp.getEname());
@@ -86,6 +87,48 @@ public class EmpDaoImpl implements EmpDao {
 		}
 		
 		return empList;
+	}
+
+	@Override
+	public int insert(Emp emp) {
+		int result = 0;
+		System.out.println("EmpDaoImpl insert Start...");
+		try {
+			result = session.insert("insertEmp", emp);
+			System.out.println("EmpDaoImpl insert After...");
+		} catch (Exception e) {
+			System.out.println("EmpDaoImpl insert Exception->"+e.getMessage());
+		}
+		return result;
+	}
+
+	@Override
+	public int delete(int empno) {
+		int result = 0;
+		System.out.println("EmpDaoImpl delete Start...");
+		try {
+			result = session.delete("delete", empno);
+			System.out.println("EmpDaoImpl delete After result->"+result);
+		} catch (Exception e) {
+			System.out.println("EmpDaoImpl delete Exception->"+e.getMessage());
+		}
+		return result;
+	}
+
+	@Override
+	public List<Emp> listEmpKeyword(Emp emp) {
+		List<Emp> listEmpKeyword = null;
+		System.out.println("EmpDaoImpl listEmpKeyword Start...");
+		System.out.println("EmpDaoImpl listEmpKeyword emp.getEname->"+emp.getEname());
+		System.out.println("EmpDaoImpl listEmpKeyword emp.getKeyword->"+emp.getKeyword());
+		try {
+			//	Naming Rule					Map 	ID				parameter
+			listEmpKeyword = session.selectList("tkEmpListKeyword", emp);
+			System.out.println("EmpDaoImpl listEmpKeyword.size()->"+listEmpKeyword.size());
+		} catch (Exception e) {
+			System.out.println("EmpDaoImpl listEmpKeyword Exception->"+e.getMessage());
+		}
+		return listEmpKeyword;
 	}
 
 }

@@ -24,12 +24,12 @@ public class EmpController {
 	
 	@Autowired
 	private EmpService es;
-	
+
 	@RequestMapping(value="list")
 	public String list(Emp emp, String currentPage, Model model) {
 		logger.info("EmpController Start list...");
 		
-		int total = es.total();	// Emp Count -> 42
+		int total = es.total();	// Emp Count -> 19
 
 		System.out.println("EmpController total->"+total);
 		Paging pg = new Paging(total, currentPage);
@@ -38,6 +38,26 @@ public class EmpController {
 		List<Emp> listEmp = es.listEmp(emp);
 		System.out.println("EmpController list listEmp.size()=>"+listEmp.size());
 		model.addAttribute("listEmp", listEmp);
+		model.addAttribute("pg", pg);
+		model.addAttribute("total", total);
+		
+		return "list";
+	}
+	
+	// keyword(조건) 조회
+	@RequestMapping(value="listKeyword")
+	public String list3(Emp emp, String currentPage, Model model) {
+		logger.info("EmpController Start list3 keyword(조건) 조회...");
+		
+		int total = es.total();	// Emp Count -> 19
+
+		System.out.println("EmpController total->"+total);
+		Paging pg = new Paging(total, currentPage);
+		emp.setStart(pg.getStart());	// 시작시 1
+		emp.setEnd(pg.getEnd());		// 시작시 10
+		List<Emp> listEmpKeyword = es.listEmpKeyword(emp);
+		System.out.println("EmpController list listEmp.size()=>"+listEmpKeyword.size());
+		model.addAttribute("listEmp", listEmpKeyword);
 		model.addAttribute("pg", pg);
 		model.addAttribute("total", total);
 		
@@ -109,4 +129,28 @@ public class EmpController {
 			return "forward:wrtieForm";
 		}
 	}
+	
+	@GetMapping(value="confirm")
+	public String comfirm(int empno, Model model) {
+		Emp emp = es.detail(empno);
+		model.addAttribute("empno", empno);
+		if(emp != null) {
+			model.addAttribute("msg", "중복된 사번입니다.");
+			return "forward:writeForm";
+		} else {
+			model.addAttribute("msg", "사용 가능한 사번입니다.");
+			return "forward:writeForm";
+		}
+	}
+	
+	@RequestMapping(value="delete")
+	public String delete(int empno, Model model) {
+		System.out.println("EmpController Start delete...");
+		// Service   int delete(int empno)
+		// Dao       int delete(int empno)
+		// Mapper    session.delete("delete",empno);
+		int result = es.delete(empno);
+		return "redirect:list";
+	}
+	
 }

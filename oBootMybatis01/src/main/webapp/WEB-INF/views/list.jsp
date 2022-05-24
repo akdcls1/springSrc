@@ -12,6 +12,17 @@
 	<a href="writeForm">입력</a>
 	<p>UptCnt 수정시 전달 MEssage : ${uptCnt }</p>
 	
+	<form action="listKeyword">
+		<input type="hidden" name="currentPage" value="${pg.currentPage }">
+		<select name="search">
+			<option value="s_all">전체조회</option>
+			<option value="s_job">업무조회</option>
+			<option value="s_ename">이름조회</option>
+		</select>
+		<input type="text" name="keyword" placeholder="keyword을 입력하세요">'
+		<button type="submit">keyword검색</button>
+	</form>
+	
 	<c:set var="num" value="${pg.total-pg.start+1 }"></c:set>
 	
 	<table>

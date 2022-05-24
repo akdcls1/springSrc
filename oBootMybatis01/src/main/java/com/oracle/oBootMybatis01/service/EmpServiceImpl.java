@@ -69,4 +69,29 @@ public class EmpServiceImpl implements EmpService {
 		return deptList;
 	}
 
+	@Override
+	public int insert(Emp emp) {
+		int result = 0;
+		
+		result = ed.insert(emp);
+		
+		return result;
+	}
+
+	@Override
+	public int delete(int empno) {
+		int result = 0;
+		result = ed.delete(empno);
+		return result;
+	}
+
+	@Override
+	public List<Emp> listEmpKeyword(Emp emp) {
+		List<Emp> listEmpKeyword = null;
+		System.out.println("EmpServiceImpl listEmp Start...");
+		listEmpKeyword = ed.listEmpKeyword(emp);
+		System.out.println("EmpServiceImpl listEmp empList.size()->"+listEmpKeyword.size());
+		return listEmpKeyword;
+	}
+
 }
