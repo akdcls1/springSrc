@@ -19,7 +19,7 @@
 			<option value="s_job">업무조회</option>
 			<option value="s_ename">이름조회</option>
 		</select>
-		<input type="text" name="keyword" placeholder="keyword을 입력하세요">
+		<input type="text" name="keyword" value="${keyword }" placeholder="keyword을 입력하세요">
 		<button type="submit">keyword검색</button>
 	</form>
 	
@@ -39,7 +39,7 @@
 		<a href="listKeyword?currentPage=${pg.startPage-pg.pageBlock }&search=s_all&keyword=${keyword}">[이전]</a>
 	</c:if>
 	<c:forEach var="i" begin="${pg.startPage }" end="${pg.endPage }">
-		<a href="listKeyword?currentPage=${i}&search=s_all<%-- &keyword=${keyword} --%>">[${i }]</a>
+		<a href="listKeyword?currentPage=${i}&search=s_all&keyword=${keyword}">[${i }]</a>
 	</c:forEach>
 	<c:if test="${pg.endPage < pg.totalPage }">
 		<a href="listKeyword?currentPage=${pg.startPage+pg.pageBlock }&search=s_all&keyword=${keyword}">[다음]</a>

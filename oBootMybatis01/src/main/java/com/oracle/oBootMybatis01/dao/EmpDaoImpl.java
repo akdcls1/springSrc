@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.oracle.oBootMybatis01.model.Emp;
+import com.oracle.oBootMybatis01.model.EmpDept;
 
 @Repository
 public class EmpDaoImpl implements EmpDao {
@@ -122,6 +123,7 @@ public class EmpDaoImpl implements EmpDao {
 		System.out.println("EmpDaoImpl listEmpKeyword emp.getEname->"+emp.getEname());
 		System.out.println("EmpDaoImpl listEmpKeyword emp.getKeyword->"+emp.getKeyword());
 		if(emp.getKeyword() == null) emp.setKeyword("%");
+//		if(emp.getEname() == null) emp.setEname("%");
 		try {
 			//	keyword 검색
 			//	Naming Rule					Map 	ID				parameter
@@ -145,6 +147,20 @@ public class EmpDaoImpl implements EmpDao {
 			System.out.println("EmpDaoImpl listEmpKeyword Exception->"+e.getMessage());
 		}
 		return tot;
+	}
+
+	@Override
+	public List<EmpDept> listEmpDept() {
+		List<EmpDept> empDept = null;
+		System.out.println("EmpDaoImpl listEmpKeyword Start...");
+		try {
+			//	Naming Rule				Map 	ID
+			empDept = session.selectList("tkListEmpDept");
+			System.out.println("EmpDaoImpl listEmpKeyword.size()->"+empDept.size());
+		} catch (Exception e) {
+			System.out.println("EmpDaoImpl listEmpKeyword Exception->"+e.getMessage());
+		}
+		return empDept;
 	}
 
 }

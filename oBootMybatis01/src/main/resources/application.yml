@@ -1,3 +1,4 @@
+# http port set
 server:
   port: 8386
 # Oracle Connect
@@ -7,6 +8,18 @@ spring:
     url: jdbc:oracle:thin:@localhost:1521/xe
     username: scott
     password: tiger
+
+# gmail Transfer
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: card3351@gmail.com
+    password: gus979582
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls.enable: true
 # ORM JPA
   jpa:
     hibernate:

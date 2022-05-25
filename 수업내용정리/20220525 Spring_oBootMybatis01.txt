@@ -1,0 +1,16 @@
+오전수업 -
+mybatis : 독립된 프레임워크
+컨트롤러를 사람별로 나누기? 괜찮다고합니다
+
+어노테이션을 컨트롤러로 설정해도 매핑할때 다르게 입력하면 상관이 없다.
+서비스는 인터페이스를 다르게 서비스잡고 사용할때 각 서비스를 컨트롤러에서 불러들여서 사용하는식으로 설정한다.
+다오 서비스랑 동일하게 사용한다.
+
+EmpDept : Emp와 Dept를 조인할 클래스
+mapper에 namespace에 EmpDeptMapper부분은 유일하면 된다.
+
+Datasource -> javax.activation으로 선택
+MimeUtility -> javax.mail.internet
+
+starttls.enable : true로 하면 정보를 암호화해서 전송.
+application.yml -> password 입력할때 가능한 특수문자 : !, @, 

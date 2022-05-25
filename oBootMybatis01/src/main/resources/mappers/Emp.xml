@@ -65,27 +65,29 @@
 			SELECT rownum rn, a.*
 			FROM (
 					SELECT * FROM emp 
-			
+					<choose>
+						<when test="search == 's_all'">
+							WHERE ( 	ename like '%' || #{keyword} || '%'
+								OR	job like '%' || #{keyword} || '%'
+								)
+						</when>
+						<when test="search == 's_job'">
+							WHERE job like '%' || #{keyword} || '%'
+						</when>
+						<when test="search == 's_ename'">
+							WHERE ename like '%' || #{keyword} || '%'
+						</when>
+						<otherwise>
+							WHERE ( 	ename like '%'
+								OR	job like '%' 
+								)
+						</otherwise>
+					</choose>
 					ORDER BY empno
 				) a
 			)
 		WHERE rn between #{start} AND #{end}
-		<choose>
-			<when test="search == 's_all'">
-				AND ( 	ename like '%' || #{keyword} || '%'
-					OR	job like '%' || #{keyword} || '%'
-					)
-			</when>
-			<when test="search == 's_job'">
-				AND job like '%' || #{keyword} || '%'
-			</when>
-			<when test="search == 's_ename'">
-				AND ename like '%' || #{keyword} || '%'
-			</when>
-			<otherwise>
-				AND job like '%'
-			</otherwise>
-		</choose>
+		
 	</select>
 	
 	<select id="tkEmpTotalKeyword" parameterType="Emp" resultType="int">

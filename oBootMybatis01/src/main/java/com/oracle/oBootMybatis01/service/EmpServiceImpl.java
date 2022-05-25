@@ -9,6 +9,7 @@ import com.oracle.oBootMybatis01.dao.DeptDao;
 import com.oracle.oBootMybatis01.dao.EmpDao;
 import com.oracle.oBootMybatis01.model.Dept;
 import com.oracle.oBootMybatis01.model.Emp;
+import com.oracle.oBootMybatis01.model.EmpDept;
 
 @Service
 public class EmpServiceImpl implements EmpService {
@@ -100,6 +101,15 @@ public class EmpServiceImpl implements EmpService {
 		int totCnt = ed.totalKeyword(emp);
 		System.out.println("EmpServiceImpl totalKeyword totCnt->"+totCnt);
 		return totCnt;
+	}
+
+	@Override
+	public List<EmpDept> listEmpDept() {
+		List<EmpDept> empDeptList = null;
+		System.out.println("EmpServiceImpl listEmpDept Start...");
+		empDeptList = ed.listEmpDept();
+		System.out.println("EmpServiceImpl listEmpDept empDeptList.size()->"+empDeptList.size());
+		return empDeptList;
 	}
 
 }
