@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.oracle.oBootMybatis01.dao.EmpDao;
 import com.oracle.oBootMybatis01.model.Dept;
+import com.oracle.oBootMybatis01.model.DeptVO;
 import com.oracle.oBootMybatis01.model.Emp;
 import com.oracle.oBootMybatis01.model.EmpDept;
 import com.oracle.oBootMybatis01.service.EmpService;
@@ -202,14 +203,41 @@ public class EmpController {
 			messageHelper.setText("임시 비밀번호입니다 : "+tempPassword);		// 메일 내용
 			System.out.println("임시 비밀번호입니다 : "+tempPassword);
 			DataSource dataSource = new FileDataSource("E:\\spring\\springSrc\\log\\8.jpg");
+			//																			Base24
 			messageHelper.addAttachment(MimeUtility.encodeText("airport.png", "UTF-8", "B"), dataSource);
 			mailSender.send(message);
 			model.addAttribute("check", 1);		// 정상 전달
+			// 임시비번 저장로직 Service --> Dao --> mapper
+			// member.teamPassword
 //			s.tempPw(u_id, tempPassword);		// db에 비밀번호를 임시비밀번호로 업데이트
 		} catch (Exception e) {
 			System.out.println(e);
 			model.addAttribute("check", 2);		// 메일 전달 실패
 		}
 		return "mailResult";
+	}
+	
+	// Procedure Test 입력화면
+	@RequestMapping(value="writeDeptIn", method=RequestMethod.GET)
+	public String writeDeptIn(Model model) {
+		System.out.println("writeDeptIn Start...");
+		return "writeDept3";
+	}
+	
+	// Procedure Test 입력후 VO 전달
+	@PostMapping(value="writeDept" )
+	public String writeDept(DeptVO deptVO, Model model) {
+		// Procedure Call
+		es.insertDept(deptVO);
+		if(deptVO == null) {
+			System.out.println("deptVO NULL");
+		}else {
+			System.out.println("RdeptVO.getOdeptno()->"+deptVO.getOdeptno());
+			System.out.println("RdeptVO.getOdname()->"+deptVO.getOdname());
+			System.out.println("RdeptVO.getOloc()->"+deptVO.getOloc());
+			model.addAttribute("msg", "정상 입력 되었습니다^^");
+			model.addAttribute("dept", deptVO);
+		}
+		return "writeDept3";
 	}
 }

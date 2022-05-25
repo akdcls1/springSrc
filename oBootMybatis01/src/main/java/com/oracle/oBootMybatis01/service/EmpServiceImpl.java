@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.oracle.oBootMybatis01.dao.DeptDao;
 import com.oracle.oBootMybatis01.dao.EmpDao;
 import com.oracle.oBootMybatis01.model.Dept;
+import com.oracle.oBootMybatis01.model.DeptVO;
 import com.oracle.oBootMybatis01.model.Emp;
 import com.oracle.oBootMybatis01.model.EmpDept;
 
@@ -110,6 +111,12 @@ public class EmpServiceImpl implements EmpService {
 		empDeptList = ed.listEmpDept();
 		System.out.println("EmpServiceImpl listEmpDept empDeptList.size()->"+empDeptList.size());
 		return empDeptList;
+	}
+
+	@Override
+	public void insertDept(DeptVO deptVO) {
+		System.out.println("EmpServiceImpl insertDept Start...");
+		dd.insertDept(deptVO);
 	}
 
 }

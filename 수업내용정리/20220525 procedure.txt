@@ -1,0 +1,20 @@
+create or replace Procedure Dept_Insert3
+( in_deptno     in      dept.deptno%type,   in_dname    in  dept.dname%type,    in_loc  in  dept.loc%type,
+ out_deptno     OUT     dept.deptno%type,   out_dname   out dept.dname%type,    out_loc out dept.loc%type)
+IS
+BEGIN
+    insert into dept values(in_deptno, in_dname, in_loc);
+    commit;
+
+    DBMS_OUTPUT.ENABLE;
+    -- %TYPE 데이터형 변수 사용
+    SELECT deptno, dname, loc
+    INTO out_deptno, out_dname, out_loc
+    From dept
+    where deptno = in_deptno;
+
+    -- 결과값 출력
+    DBMS_output.put_line('부서번호 : ' || out_deptno);
+    DBMS_output.put_line('부서이름 : ' || out_dname);    
+    DBMS_output.put_line('부서위치 : ' || out_loc);
+End;
