@@ -11,6 +11,14 @@
 		select * from dept
 	</select>
 	
+	<select id="tkDeptName" parameterType="int" resultType="String">
+		select dname from dept where deptno=#{deptno}
+	</select>
+	
+	<select id="tkDeptSelOne" parameterType="int" resultType="Dept">
+		select * from dept where deptno = #{deptno}
+	</select>
+	
 	<select id="ProcDept" parameterType="DeptVO" statementType="CALLABLE">
 		{
 			call Dept_Insert3(

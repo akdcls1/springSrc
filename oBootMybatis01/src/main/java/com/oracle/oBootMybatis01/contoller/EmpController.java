@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.oracle.oBootMybatis01.dao.EmpDao;
 import com.oracle.oBootMybatis01.model.Dept;
@@ -38,6 +39,11 @@ public class EmpController {
 	@Autowired
 	private JavaMailSender mailSender;
 
+	@RequestMapping(value="test01")
+	public String test01() {
+		return "test01/test01";
+	}
+	
 	@RequestMapping(value="list")
 	public String list(Emp emp, String currentPage, Model model) {
 		logger.info("EmpController Start list...");
@@ -271,10 +277,22 @@ public class EmpController {
 		return "listEmpAjax";
 	}
 	
+	@ResponseBody
 	@RequestMapping(value="getDeptName", produces = "application/text;charset=UTF-8")
 	public String getDeptName(int deptno, Model model) {
 		System.out.println("deptno->"+deptno);
 		String deptName = es.deptName(deptno);
 		return deptName;
+	}
+	
+	// Ajax List Test
+	@RequestMapping(value="listEmpAjax2")
+	public String listEmpAjax2(Model model) {
+		EmpDept empDept = null;
+		System.out.println("listEmpAjax2 Start");
+		List<EmpDept> listEmp = es.listEmp(empDept);
+		model.addAttribute("result","kkk");
+		model.addAttribute("listEmp",listEmp);		
+		return "listEmpAjax2";
 	}
 }

@@ -23,4 +23,6 @@ public interface EmpService {
 	void 		insertDept(DeptVO deptVO);
 	void 		selListDept(HashMap<String, Object> map);
 	List<EmpDept> listEmp(EmpDept empDept);
+	String 		deptName(int deptno);
+	Dept 		deptDetail(int deptno);
 }

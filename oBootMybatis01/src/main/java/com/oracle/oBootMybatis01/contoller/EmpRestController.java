@@ -39,4 +39,11 @@ public class EmpRestController {
 		List<Dept> deptList = es.deptSelect();
 		return deptList;
 	}
+	
+	@RequestMapping("/sample/sendVO1")
+	public Dept sendVO1(int deptno) {
+		System.out.println("@RestController deptno->"+deptno);
+		Dept dept3 = es.deptDetail(deptno);
+		return dept3;
+	}
 }

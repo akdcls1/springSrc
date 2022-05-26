@@ -24,31 +24,55 @@
 	/* EmpController */
     function getDeptName(Vdeptno) {
     	console.log(Vdeptno);
-    	alert("Vdeptno->"+Vdeptno);
+    	//alert("Vdeptno->"+Vdeptno);
     	$.ajax(
     			{
     				url:"<%=context%>/getDeptName",
     				data:{deptno : Vdeptno},
     				dataType:'text',
     				success:function(data){
-    					alert("success ajax Data -> "+data);
-    					$('#deptName').val(data);	/* input Tage*/
+    					//alert("success ajax Data -> "+data);
+    					$('#deptName').val(data);	/* input Tag*/
     					$('#msg').html(data);		/* span id Tag */
     				}
     			}
     		);
 	}
-	
-	/* RestController TEST */
-	function getDept(Vdeptno){
+	/* RestController TEST1 */
+	function getDept2(Vdeptno){
 		alert("Vdeptno->"+Vdeptno);
-	
-	
-		
-		
+		$.ajax(
+			{
+				url:"<%=context%>/sample/sendVO2",
+				data:{deptno : Vdeptno},
+				dataType:'json',
+				success:function(sampleVo){
+					/* alert(".ajax getDeptData"+data); */
+					str = sampleVo.firstName+" "+sampleVo.lastName+" "+sampleVo.mno;
+					alert(".ajax getDept str"+str);
+					$('#RestDept').val(str);		/* input Tag */
+				}
+			}	
+		);
 	}
-
-
+	
+	/* RestController TEST2 과제 */
+	function getDept1(Vdeptno){
+		alert("Vdeptno->"+Vdeptno);
+		$.ajax(
+			{
+				url:"<%=context%>/sample/sendVO1",
+				data:{deptno : Vdeptno},
+				dataType:'json',
+				success:function(dept){
+					/* alert(".ajax getDeptData"+data); */
+					str = dept.dname+" "+dept.loc;
+					//부서번호가지고 부서명하고 부서이름을 갖고와서 리턴시켜서 str에 값을 해서 클릭햇을때 값을 집어넣는걸로
+					$('#getDept1').val(str);
+				}
+			}	
+		);
+	}
  </script>
 </head>
 <body>
@@ -59,7 +83,9 @@
 		<tr><td>${empDept.empno }</td><td>${empDept.ename }</td>
 			<td>${empDept.job }</td>
 			<td>${empDept.deptno} 
-			    <input type="button" id="btn_idCheck" value="부서명" onmouseover="getDeptName(${empDept.deptno })">
+			    <input type="button" id="btn_idCheck" value="부서명" 
+			    	onmouseover="getDeptName(${empDept.deptno })"
+			    	onclick="getDept1(${empDept.deptno })">
 			</td>
 			<td>${empDept.loc }</td>
 		</tr>
@@ -67,11 +93,12 @@
 </table>
 	 
 	deptName:  <input type="text" id="deptName"  readonly="readonly"><p>
+	getDept1:  <input type="text" id="getDept1"  readonly="readonly"><p>
     Message :  <span id="msg"></span><p>
 
     RestController sendVO2: <input type="text" id="RestDept"    readonly="readonly"><p>
 	RestController sendVO2: sendVO2<input type="button" id="btn_Dept"  value="부서명"  
-	                                      onclick="getDept(10)"><p>
+	                                      onclick="getDept2(10)"><p>
 
 
 </body>

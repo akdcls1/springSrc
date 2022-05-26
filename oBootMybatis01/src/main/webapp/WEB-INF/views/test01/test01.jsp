@@ -5,10 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/httpRequest.js"></script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-	<header>
-		
-	</header>
+	<%
+		String context = request.getContextPath();
+		System.out.println("context->"+context);
+	%>
 </body>
 </html>

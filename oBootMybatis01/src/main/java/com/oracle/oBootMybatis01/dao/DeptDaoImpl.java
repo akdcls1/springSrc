@@ -35,4 +35,18 @@ public class DeptDaoImpl implements DeptDao {
 		session.selectOne("ProcDeptList", map);
 	}
 
+	@Override
+	public Dept deptDetail(int deptno) {
+		System.out.println("DeptDaoImpl deptDetail Start...");
+		Dept dept = null;
+		try {
+			//						mapper ID		,	Parameter
+			dept = session.selectOne("tkDeptSelOne", deptno);
+			System.out.println("DeptDaoImpl deptDetail dept.getDname()->"+dept.getDname());
+		} catch (Exception e) {
+			System.out.println("DeptDaoImpl deptDetail Exception->"+e.getMessage());
+		}
+		return dept;
+	}
+
 }

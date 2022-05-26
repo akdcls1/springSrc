@@ -17,4 +17,5 @@ public interface EmpDao {
 	int 		totalKeyword(Emp emp);
 	List<EmpDept> listEmpDept();
 	List<EmpDept> listEmp(EmpDept empDept);
+	String 		deptName(int deptno);
 }

@@ -10,4 +10,5 @@ public interface DeptDao {
 	List<Dept> 	deptSelect();
 	void 		insertDept(DeptVO deptVO);
 	void 		selListDept(HashMap<String, Object> map);
+	Dept 		deptDetail(int deptno);
 }
