@@ -1,5 +1,6 @@
 package com.oracle.oBootMybatis01.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -117,6 +118,18 @@ public class EmpServiceImpl implements EmpService {
 	public void insertDept(DeptVO deptVO) {
 		System.out.println("EmpServiceImpl insertDept Start...");
 		dd.insertDept(deptVO);
+	}
+
+	@Override
+	public void selListDept(HashMap<String, Object> map) {
+		System.out.println("EmpServiceImpl selListDept Start...");
+		dd.selListDept(map);
+	}
+
+	@Override
+	public List<EmpDept> listEmp(EmpDept empDept) {
+		System.out.println("EmpServiceImpl listEmp Start...");
+		return ed.listEmp(empDept);
 	}
 
 }

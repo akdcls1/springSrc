@@ -16,4 +16,5 @@ public interface EmpDao {
 	List<Emp> 	listEmpKeyword(Emp emp);
 	int 		totalKeyword(Emp emp);
 	List<EmpDept> listEmpDept();
+	List<EmpDept> listEmp(EmpDept empDept);
 }

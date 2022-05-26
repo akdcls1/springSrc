@@ -1,5 +1,6 @@
 package com.oracle.oBootMybatis01.contoller;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.activation.DataSource;
@@ -239,5 +240,41 @@ public class EmpController {
 			model.addAttribute("dept", deptVO);
 		}
 		return "writeDept3";
+	}
+	
+	@GetMapping(value="writeDeptCursor")
+	public String writeDeptCursor(Model model) {
+		System.out.println("EmpController writeDeptCursor Start...");
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("sDeptno", 10);
+		map.put("eDeptno", 55);
+		es.selListDept(map);
+		List<Dept> deptLists = (List<Dept>) map.get("dept");
+		for(Dept dept : deptLists) {
+			System.out.println("dept.getDname->"+dept.getDname());
+			System.out.println("dept.getLoc->"+dept.getLoc());
+		}
+		System.out.println("deptList Size->"+deptLists.size());
+		model.addAttribute("deptList", deptLists);
+		return "writeDeptCursor";
+	}
+	
+	//Ajax List Test
+	@RequestMapping(value="listEmpAjax")
+	public String listEmpAjax(Model model) {
+		EmpDept empDept = null;
+		System.out.println("Ajax List Test Start");
+		List<EmpDept> listEmp = es.listEmp(empDept);
+		System.out.println("EmpController listEmpAjax listEmp.size()->"+listEmp.size());
+		model.addAttribute("result","kkk");
+		model.addAttribute("listEmp",listEmp);
+		return "listEmpAjax";
+	}
+	
+	@RequestMapping(value="getDeptName", produces = "application/text;charset=UTF-8")
+	public String getDeptName(int deptno, Model model) {
+		System.out.println("deptno->"+deptno);
+		String deptName = es.deptName(deptno);
+		return deptName;
 	}
 }

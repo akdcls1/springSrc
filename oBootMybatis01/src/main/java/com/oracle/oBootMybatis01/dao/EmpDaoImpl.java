@@ -163,4 +163,19 @@ public class EmpDaoImpl implements EmpDao {
 		return empDept;
 	}
 
+	@Override
+	public List<EmpDept> listEmp(EmpDept empDept) {
+		System.out.println("EmpDaoImpl listEmp Start...");
+		List<EmpDept> empDept3 = null;
+		try {
+			//	Naming Rule				Map 	ID
+			empDept3 = session.selectList("tkListEmpDept", empDept);
+			System.out.println("EmpDaoImpl listEmpKeyword.size()->"+empDept3.size());
+		} catch (Exception e) {
+			System.out.println("EmpDaoImpl listEmpKeyword Exception->"+e.getMessage());
+		}
+		return empDept3;
+	}
+
+
 }

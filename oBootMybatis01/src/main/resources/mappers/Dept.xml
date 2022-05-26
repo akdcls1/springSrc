@@ -23,4 +23,16 @@
 			)
 		}
 	</select>
+	
+	<select id="ProcDeptList" parameterType="java.util.Map" statementType="CALLABLE">
+		{
+			call Dept_Cursor3(
+				 #{sDeptno,		mode=IN,	jdbcType=INTEGER, javaType=string}
+				,#{eDeptno,		mode=IN,	jdbcType=INTEGER}
+				,#{dept,		mode=OUT,	jdbcType=CURSOR
+										,	javaType=java.sql.ResultSet
+										,	resultMap=DeptResult}
+			)
+		}
+	</select>
 </mapper>
