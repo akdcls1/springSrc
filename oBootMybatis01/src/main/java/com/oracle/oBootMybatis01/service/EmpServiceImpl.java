@@ -13,6 +13,7 @@ import com.oracle.oBootMybatis01.model.Dept;
 import com.oracle.oBootMybatis01.model.DeptVO;
 import com.oracle.oBootMybatis01.model.Emp;
 import com.oracle.oBootMybatis01.model.EmpDept;
+import com.oracle.oBootMybatis01.model.Member1;
 
 @Service
 public class EmpServiceImpl implements EmpService {
@@ -152,6 +153,12 @@ public class EmpServiceImpl implements EmpService {
 	public int memCount(String id) {
 		System.out.println("EmpServiceImpl memCount id->"+id);
 		return md.memCount(id);
+	}
+
+	@Override
+	public List<Member1> listMem(Member1 member1) {
+		System.out.println("EmpSErviceImpl listMem Start...");
+		return md.listMem(member1);
 	}
 
 }

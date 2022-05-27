@@ -7,6 +7,7 @@ import com.oracle.oBootMybatis01.model.Dept;
 import com.oracle.oBootMybatis01.model.DeptVO;
 import com.oracle.oBootMybatis01.model.Emp;
 import com.oracle.oBootMybatis01.model.EmpDept;
+import com.oracle.oBootMybatis01.model.Member1;
 
 public interface EmpService {
 	int			total();
@@ -26,4 +27,5 @@ public interface EmpService {
 	String 		deptName(int deptno);
 	Dept 		deptDetail(int deptno);
 	int 		memCount(String id);
+	List<Member1> listMem(Member1 member1);
 }

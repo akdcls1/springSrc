@@ -21,6 +21,8 @@ E:\spring\springSrc\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\325350
 \och07_MVC03\src\main\java
 E:\spring\springSrc\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2422247672.index
 \och09_security2\src\main\java
+E:\spring\springSrc\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3315387770.index
+\oBootMybatis01\src\main\java
 E:\spring\springSrc\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\360028402.index
 \och07_MVC041\src\main\java
 E:\spring\springSrc\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2741236519.index

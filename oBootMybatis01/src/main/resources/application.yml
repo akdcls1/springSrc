@@ -29,7 +29,7 @@ spring:
         show_sql: true
         format_sql: true
 
-# view resolver(Templete -> JSP Use)
+# view resolver(Templete -> JSP Use)#성현이 화이팅!!
   mvc:
     view:
       prefix: /WEB-INF/views/

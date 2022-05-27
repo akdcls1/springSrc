@@ -27,6 +27,7 @@ import com.oracle.oBootMybatis01.model.Dept;
 import com.oracle.oBootMybatis01.model.DeptVO;
 import com.oracle.oBootMybatis01.model.Emp;
 import com.oracle.oBootMybatis01.model.EmpDept;
+import com.oracle.oBootMybatis01.model.Member1;
 import com.oracle.oBootMybatis01.service.EmpService;
 import com.oracle.oBootMybatis01.service.Paging;
 
@@ -297,7 +298,7 @@ public class EmpController {
 	}
 	
 	// interCeptor 시작 화면
-	@GetMapping("interCeptorForm")
+	@RequestMapping(value="interCeptorForm")
 	public String interCeptorForm(Model model) {
 		System.out.println("interCeptorForm Start");
 		return "interCeptorForm";
@@ -316,5 +317,27 @@ public class EmpController {
 		System.out.println("interCeptor Test End");
 		
 		return "interCeptor";	// User 존재하면 User 이용 조회 Page
+	}
+	
+	// SampleInterceptor 내용을 받아 처리
+	@RequestMapping(value="doMemberWrite")
+	public String doMemberWrite(Model model, HttpServletRequest request) {
+		String ID = (String) request.getSession().getAttribute("ID");
+		System.out.println("doMemberWrite 부터 하세요");
+		model.addAttribute("id", ID);
+		return "doMemberWrite";
+	}
+	
+	// interCeptor 진행 Test
+	@RequestMapping(value="doMemberList")
+	public String doMemberList(Model model, HttpServletRequest request) {
+		String ID = (String) request.getSession().getAttribute("ID");
+		System.out.println("doMemberList Test Start ID->"+ID);
+		Member1 member1 = null;
+		// Member3 List Get Service
+		List<Member1> listMem = es.listMem(member1);
+		model.addAttribute("ID", ID);
+		model.addAttribute("listMem", listMem);
+		return "doMemberList";		// User 존재하면 User 이용 조회 Page
 	}
 }

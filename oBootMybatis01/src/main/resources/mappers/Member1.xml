@@ -6,4 +6,7 @@
 	<select id="memCount" parameterType="java.lang.String" resultType="int">
 		select Count(*) from member1 where id = #{id}
 	</select>
+	<select id="listMember1" parameterType="Member1" resultType="Member1">
+		select * from member1
+	</select>
 </mapper>
