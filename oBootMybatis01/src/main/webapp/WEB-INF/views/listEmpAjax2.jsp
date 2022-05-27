@@ -32,22 +32,53 @@
 
 		console.log("getListDept Run");
 		alert("getListDept Run...");  
+		$.ajax(
+			{
+				url:"<%=context%>/sendVO3",
+				dataType:'json',
+				seccess:function(deptList){
+					var jsondata = JSON.stringify(deptList);
+					alert("jsondata->"+jsondata);
+					$('#Dept_list').append(jsondata);
+					str += "<select name='dept'>";
+					$(deptList).each(
+						function(){
+							//	str2 = " "+this.deptno+"' "+this.dname+"<br>";
+							str2 = "<option value='"+this.deptno+"'>"+this.dname+"</option>";
+							str += str2;
+						}
+					);
+					str += "</select><p>";
+					$('#Dept_list3').append(str);
+				}
+			}	
+		);
 
 	}
 	
-	function getDeptDelete(Vindex){
+	function getEmpDelete(Vindex){
 		console.log(Vindex);
 		alert("empDept->"+Vindex); 
+		//					실시간 변화값 Get
 		var selEname =   $("#ename"+Vindex).val();
 		var selEmpno =   $("#empno"+Vindex).val();
 		alert("selEmpno->"+selEmpno); 
 		// Ajax로 empnoDelete
-
-
-
+		$.ajax(
+			{
+				url:"<%=context%>/empnoDelete",
+				data:{empno : selEmpno , ename : selEname},
+				dataType:'text',
+				success:function(data){
+					alert(".ajax getDeptDelete data->"+data);
+					if(data == '1'){
+						// 성공하면 아래라인 수행
+						$('#empDept'+Vindex).remove();	/* Delete Tag */
+					}
+				}
+			}
+		);
 	}
-
-	
  </script>
 </head>
 <body>
@@ -59,7 +90,7 @@
 	    <td><input type="text" id="empno${status.index}" value="${empDept.empno }">${empDept.empno }</td>
 	    <td><input type="text" id="ename${status.index}" value="${empDept.ename }">${empDept.ename }</td>
 		<td>${empDept.job }</td><td>${empDept.deptno } 
-		    <input type="button" id="btn_idCheck2" value="부서Row Delete" onclick="getDeptDelete(${status.index})">
+		    <input type="button" id="btn_idCheck2" value="부서Row Delete" onclick="getEmpDelete(${status.index})">
 		</td>
 		<td>${empDept.loc }</td>
 	</tr>

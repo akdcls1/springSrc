@@ -295,4 +295,26 @@ public class EmpController {
 		model.addAttribute("listEmp",listEmp);		
 		return "listEmpAjax2";
 	}
+	
+	// interCeptor 시작 화면
+	@GetMapping("interCeptorForm")
+	public String interCeptorForm(Model model) {
+		System.out.println("interCeptorForm Start");
+		return "interCeptorForm";
+	}
+	
+	// interCeptor 진행 Test 2
+	@RequestMapping(value="interCeptor")
+	public String interCeptor(String id, Model model) {
+		System.out.println("interCeptor Test Start");
+		System.out.println("interCeptor id->"+id);
+		// 존재 : 1 , 비존재 : 0
+		int memCnt = es.memCount(id);
+		System.out.println("memCnt ->"+memCnt);
+		model.addAttribute("id",id);
+		model.addAttribute("memCnt", memCnt);
+		System.out.println("interCeptor Test End");
+		
+		return "interCeptor";	// User 존재하면 User 이용 조회 Page
+	}
 }

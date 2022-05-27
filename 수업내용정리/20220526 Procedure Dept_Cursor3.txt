@@ -1,0 +1,14 @@
+-- Spring 에서 Cursor문 사용 ListDept 전달 받음
+Create or Replace Procedure Dept_Cursor3
+(   sdeptno         IN      dept.deptno%type,
+    edeptno         IN      dept.deptno%type,
+    Dept_Cursor    OUT     SYS_REFCURSOR
+)
+IS
+BEGIN
+    OPEN    Dept_Cursor
+    FOR
+        SELECT  deptno, dname,  loc
+        FROM    dept
+        WHERE   deptno  BETWEEN sdeptno AND edeptno;
+END Dept_Cursor3;

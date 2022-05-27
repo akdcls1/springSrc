@@ -5,6 +5,7 @@
 <aop-project name="oBootHello"/>
 <aop-project name="oBootJpa01"/>
 <aop-project name="oBootJpa02"/>
+<aop-project name="och06_AOP3"/>
 <aop-project name="oBootDBConnect"/>
 <aop-project name="oBootJpaAPI01"/>
 <aop-project name="och09_security1"/>

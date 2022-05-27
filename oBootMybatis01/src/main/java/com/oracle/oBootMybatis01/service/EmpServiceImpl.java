@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.oracle.oBootMybatis01.dao.DeptDao;
 import com.oracle.oBootMybatis01.dao.EmpDao;
+import com.oracle.oBootMybatis01.dao.Member1Dao;
 import com.oracle.oBootMybatis01.model.Dept;
 import com.oracle.oBootMybatis01.model.DeptVO;
 import com.oracle.oBootMybatis01.model.Emp;
@@ -20,6 +21,9 @@ public class EmpServiceImpl implements EmpService {
 	
 	@Autowired
 	private DeptDao dd;
+	
+	@Autowired
+	private Member1Dao md;
 	
 	@Override
 	public int total() {
@@ -132,18 +136,22 @@ public class EmpServiceImpl implements EmpService {
 		return ed.listEmp(empDept);
 	}
 
-   @Override
-   public String deptName(int deptno) {
-      System.out.println("EmpServiceImpl deptName ");
-      return ed.deptName(deptno);
-   }
-
+	@Override
+	public String deptName(int deptno) {
+		System.out.println("EmpServiceImpl deptName ");
+		return ed.deptName(deptno);
+	}
 	
-
 	@Override
 	public Dept deptDetail(int deptno) {
 		System.out.println("EmpServiceImpl deptDetail Start...");
 		return dd.deptDetail(deptno);
+	}
+
+	@Override
+	public int memCount(String id) {
+		System.out.println("EmpServiceImpl memCount id->"+id);
+		return md.memCount(id);
 	}
 
 }

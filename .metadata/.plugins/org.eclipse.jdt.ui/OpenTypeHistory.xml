@@ -11,5 +11,5 @@
     <typeInfo handle="=oBootJpa02/C:\/Users\/Anhyemi\/.gradle\/caches\/modules-2\/files-2.1\/org.mockito\/mockito-core\/4.0.0\/f5195e0c4a45716bbd2d1d29173adbd148acce3a\/mockito-core-4.0.0.jar=/gradle_used_by_scope=/test=/=/test=/true=/&lt;org.mockito.plugins(MemberAccessor.class[MemberAccessor" modifiers="1537" timestamp="1652427749248"/>
     <typeInfo handle="=oBootJpaAPI01/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;com.example.oBootJpaAPI01.repository{MemberRepository.java[MemberRepository" modifiers="513" timestamp="1653014458264"/>
     <typeInfo handle="=oBootJpaAPI01/C:\/Users\/Anhyemi\/.gradle\/caches\/modules-2\/files-2.1\/org.aspectj\/aspectjweaver\/1.9.7\/158f5c255cd3e4408e795b79f7c3fbae9b53b7ca\/aspectjweaver-1.9.7.jar=/gradle_used_by_scope=/main,test=/&lt;org.aspectj.weaver(Member.class[Member" modifiers="1537" timestamp="1652758230931"/>
-    <typeInfo handle="=oBootMybatis01/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.oracle.oBootMybatis01.dao{DeptDao.java[DeptDao" modifiers="513" timestamp="1653460183172"/>
+    <typeInfo handle="=oBootMybatis01/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.oracle.oBootMybatis01.dao{DeptDao.java[DeptDao" modifiers="513" timestamp="1653550159400"/>
 </typeInfoHistroy>
