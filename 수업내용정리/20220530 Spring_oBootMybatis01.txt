@@ -1,0 +1,28 @@
+오전 수업-
+JDBC : DataSource
+JPA : EntityManager
+MYBATIS : SqlSession
+
+mybatis(ibatis), jpa(hibernate) 차이
+마이바티스는 파샬 매핑이고 jpa는 풀매핑이다
+마이바티스는 개발자의 sql지식이 높아야하고 그로인한 유연성이 높다.
+jpa는 개발 생산성이 높아진다. 이미 다 짜져 있어서 유연성이 좀 부족하다.
+
+Mybatis
+응답지연시간이 짦음
+SQL의 장점을 활용하여 더 유연하고 다양하게 사용할 수 있다.
+응답 지연시간이 짧아 데이터 전송에 효과적이다.
+
+JPA
+쿼리를 자동적으로 생성해주기에 응답지연시간이 길다
+SQL을 다양하게 사용할 수 없다.
+쿼리를 자동적으로 생성하기에 단순한 코드 및 단편적인 성능이 우수하다.
+
+UUID (universally unique identifier) : 국제적 유일한 식별자
+
+FileCopyUtils : 파일 및 스트림 복사를 위한 간단한 유틸리티 메소드의 집합체
+FileCopyUtils.copy(fileData, target) -> fileData배열을 target에 복사한다
+
+오후 수업-
+채팅 수업
+흐름만 이해가 되고있다

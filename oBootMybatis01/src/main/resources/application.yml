@@ -1,8 +1,14 @@
 # http port set
 server:
   port: 8386
-# Oracle Connect
+  
 spring:
+  #File Size
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+# Oracle Connect
   datasource:
     driver-class-name: oracle.jdbc.driver.OracleDriver
     url: jdbc:oracle:thin:@localhost:1521/xe
