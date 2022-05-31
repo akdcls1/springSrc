@@ -49,15 +49,15 @@
     <fullyQualifiedTypeName name="org.json.simple.parser.JSONParser"/>
     <fullyQualifiedTypeName name="org.json.simple.parser.ParseException"/>
     <fullyQualifiedTypeName name="org.springframework.web.socket.CloseStatus"/>
-    <fullyQualifiedTypeName name="com.oracle.oBootMybatis01.handler.SocketHandler"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
     <fullyQualifiedTypeName name="org.springframework.web.socket.config.annotation.EnableWebSocket"/>
-    <fullyQualifiedTypeName name="org.json.simple.JSONObject"/>
     <fullyQualifiedTypeName name="java.lang.SuppressWarnings"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
     <fullyQualifiedTypeName name="org.json.simple.JSONArray"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="org.json.simple.JSONObject"/>
+    <fullyQualifiedTypeName name="com.oracle.oBootMybatis01.handler.SocketHandler"/>
     <fullyQualifiedTypeName name="org.springframework.web.socket.WebSocketSession"/>
     <fullyQualifiedTypeName name="org.springframework.web.socket.TextMessage"/>
 </qualifiedTypeNameHistroy>
