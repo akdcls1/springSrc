@@ -43,4 +43,5 @@ public class MemberServiceTest {
 		System.out.println("MemberServiceTest memberSave member3.getName()->"+member3.getName());
 		System.out.println("MemberServiceTest memberSave member3.getTeam().getTeam_id->"+member3.getTeam().getTeam_id());
 	}
+	
 }

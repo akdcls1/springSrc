@@ -37,7 +37,43 @@ public class SocketHandler extends TextWebSocketHandler {
 		
 		switch(msgType) {
 		// 전체 Message
-		
+		case "message":
+			jsonUser = new JSONObject(sessionUserMap);
+			System.out.printf("JSONUser: %s",jsonUser);
+			// 전송대상을 기준으로 분기
+			String yourName = (String) jsonObj.get("yourName");
+			System.out.println("SocketHandler handleTextMessage yourName->"+yourName);
+			// 전체
+			if(yourName.equals("ALL")) {
+				for(String key : sessionMap.keySet()) {
+					WebSocketSession wss = sessionMap.get(key);
+					try {
+						System.out.println("message key->"+key);
+						System.out.println("message wss->"+wss);
+						wss.sendMessage(new TextMessage(jsonObj.toJSONString()));
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			}else {	// 개인 전송 대상자(yourName은 개인 sessionID)
+				// 상대방
+				System.out.println("개인 전송 대상자 상대방 sessionID->"+yourName);
+				WebSocketSession wss1 = sessionMap.get(yourName);
+				try {
+					wss1.sendMessage(new TextMessage(jsonObj.toJSONString()));
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				// 나에게도 보내줘
+				String meName = (String)jsonObj.get("sessionId");
+				WebSocketSession wss2 = sessionMap.get(meName);
+				System.out.println("개인 전송 대상자 나->"+meName);
+				try {
+					wss2.sendMessage(new TextMessage(jsonObj.toJSONString()));
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
 		// sessionUserMap에 User등록
 		case "userSave":
 			// sessionUserMap에 sessionId와 userName 등록
