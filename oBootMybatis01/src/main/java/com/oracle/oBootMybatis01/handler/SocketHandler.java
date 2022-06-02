@@ -79,14 +79,26 @@ public class SocketHandler extends TextWebSocketHandler {
 			// sessionUserMap에 sessionId와 userName 등록
 			String sessionId = 	(String)jsonObj.get("sessionId");
 			String userName = 	(String)jsonObj.get("userName");
-			sessionUserMap.put(sessionId, userName);
-			System.out.println("==================================================");
-     	    System.out.println("== sessionUserMap 저장내용 조회하여 arrayJsonUser에   ==");
-     	    System.out.println("==  각각의 JSONObject jsonUser로  변환                           ==");
-     	    System.out.println("== 1. type : userSave                          ==");
-     	    System.out.println("== 2. sessionId : sessionUserMap.sessionId     ==");
-     	    System.out.println("== 3. userName  : sessionUserMap.userName      ==");
-     	    System.out.println("=================================================");
+			String saveStatus = (String)jsonObj.get("saveStatus");
+			// 신규 등록
+			if(saveStatus.equals("Create")) {
+				sessionUserMap.put(sessionId, userName);
+				System.out.println("==================================================");
+	     	    System.out.println("== sessionUserMap 저장내용 조회하여 arrayJsonUser에   ==");
+	     	    System.out.println("==  각각의 JSONObject jsonUser로  변환                           ==");
+	     	    System.out.println("== 1. type : userSave                          ==");
+	     	    System.out.println("== 2. sessionId : sessionUserMap.sessionId     ==");
+	     	    System.out.println("== 3. userName  : sessionUserMap.userName      ==");
+	     	    System.out.println("=================================================");
+			}else {	// Delete
+				System.out.println("handleTextMessage userDelete start..");
+				System.out.println("handleTextMessage userDelete session.getId()->"+session.getId());
+				// 웹소켓 종료
+				sessionMap.remove(session.getId());
+				// sessionUserMap 종료
+				sessionUserMap.remove(session.getId());
+			}
+			
 			JSONArray arrayJsonUser = new JSONArray();
 			System.out.println("== 1. type : userSave                      ==");
 			Iterator<String> mapIter = sessionUserMap.keySet().iterator();
@@ -159,7 +171,7 @@ public class SocketHandler extends TextWebSocketHandler {
 		try {
 			jsonObj = (JSONObject) parser.parse(jsonStr);
 		}catch (ParseException e) {
-			e.printStackTrace();
+			System.out.println("jsonToObjectParser Json아니야->"+e.getMessage());
 		}
 		return jsonObj;
 	}

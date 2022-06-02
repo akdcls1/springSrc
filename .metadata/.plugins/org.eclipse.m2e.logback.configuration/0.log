@@ -11838,3 +11838,19 @@ org.eclipse.core.runtime.CoreException: Launch configuration MainClass (13) refe
 2022-05-31 14:51:44,388 [Worker-71: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-05-31 14:51:44,388 [Worker-71: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2022-05-31 14:51:44,388 [Worker-71: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\spring\springSrc\oBootMybatis01\src\test\resources
+2022-06-02 09:21:21,486 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-06-02 10:46:40,918 [Worker-39: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-06-02 10:46:40,921 [Worker-39: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-06-02 10:46:40,930 [Worker-39: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-06-02 10:46:41,004 [Worker-39: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 12 resources
+2022-06-02 10:46:41,054 [Worker-39: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-06-02 10:46:41,054 [Worker-39: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-06-02 10:46:41,055 [Worker-39: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\spring\springSrc\oBootMybatis01\src\test\resources
+2022-06-02 10:47:16,916 [Worker-42: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-06-02 10:47:16,917 [Worker-42: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-06-02 10:47:16,925 [Worker-42: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-06-02 10:47:16,956 [Worker-42: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 12 resources
+2022-06-02 10:47:16,967 [Worker-42: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-06-02 10:47:16,967 [Worker-42: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-06-02 10:47:16,967 [Worker-42: Launching oBootMybatis01 - OBootMybatis01Application] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\spring\springSrc\oBootMybatis01\src\test\resources
+2022-06-02 15:21:23,064 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.

@@ -64,7 +64,7 @@
 		
 	function wsEvt() {
 		console.log("wsEvt  start... ");
-		alert("wsEvt() Start")
+		
 		//소켓이 열리면 동작
 		ws.onopen = function(data){
 			console.log("wsEvt  소켓이 열리면 초기화 세팅하기..");
@@ -94,7 +94,7 @@
 					if(sid != ''){
 						$("#sessionId").val(sid); 
 						// session User 등록 수행
-						sendUser();
+						sendUser('Create');
 					}
 				}else if(jsonMsg.type == "message"){
 					// type이 message인 경우엔 채팅이 발생한 경우.
@@ -107,11 +107,10 @@
 					}else{
 						$("#chating").append("<p class='others'>" + jsonMsg.userName + " :" + jsonMsg.msg + "</p>");
 					}
-				//}else if(memberSave = true){
-				}else if(jsonMsg.type = "userSave"){
+				}else if(memberSave == true){
 					alert("userSave");
 					$('#member_sub').remove();
-					//  memberSave = true 면  -->	User 등록일경우
+					//  memberSave = true 면  -->	User 등록/삭제 일경우
 					// div로 감싸주면 재정의시 삭제(Refresh)후 다시 생성 
 					//var str = " <div id='member_sub' class='member_sub'> ";
 					var str = " ";
@@ -133,6 +132,7 @@
 					str += " </div><p>"
 					$('#member').append(str);	
 					memberSave = false;
+					
 				}else{
 						console.warn("unknown type!");
 				}
@@ -163,7 +163,7 @@
 	}
 	
     // 삭제시 처리 
-	function chatNameDelete(){
+/* 	function chatNameDelete(){
 		var userName = $("#userName").val();
 		var sessionId = $("#sessionId").val();
 		console.log("chatNameDelete  userName: " + userName);
@@ -186,17 +186,26 @@
 			// 자바스크립트의 값을 JSON 문자열로 변환
 			ws.send(JSON.stringify(option));
 	}
-	
-	// User 등록  Message 전송 
-	function sendUser() {
+ */	
+	// User 등록  Message 전송       saveStatus --> Create / Delete
+	function sendUser(saveStatus) {
+		
 		var userOption ={
-				type: "userSave",
-				sessionId : $("#sessionId").val(),
-				userName : $("#userName").val()
+				type       : "userSave",
+				sessionId  : $("#sessionId").val(),
+				userName   : $("#userName").val(),
+				saveStatus : saveStatus
 			}
 		alert("sendUser Start..")
 		// 자바스크립트의 값을 JSON 문자열로 변환
 		ws.send(JSON.stringify(userOption));
+		if(saveStatus == "Delete") {
+			alert("sendUser saveStatus-->"+saveStatus);
+			//자기자신창을 닫습니다.
+			//window.open('','_self').close(); 
+			 window.open(location.href, "_self", "");
+			 window.close();
+		}
 		// $('#chatting').val("");
 	}
 	
@@ -238,8 +247,8 @@
 			<table class="deleteTable">
 				<tr>
 					<th>사용자명 삭제</th>
-					<th><input type="text" name="userName" id="userName"></th>
-					<th><button onclick="chatNameDelete()" id="startBtn">이름 삭제</button></th>
+					<!-- <th><input type="text" name="userName" id="userName"></th> -->
+					<th><button onclick="sendUser('Delete')" id="startBtn">이름 삭제</button></th>
 				</tr>
 			</table>
 		</div>
